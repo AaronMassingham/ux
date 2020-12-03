@@ -1,38 +1,456 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400&family=Playfair+Display+SC&display=swap');
+/*-------- GENERAL STYLING --------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background: #ffffff;
+    color: #686868;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    height: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.flex_center {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1, h2, h3 {
+    text-transform: uppercase;
+    font-family: 'Playfair Display SC', serif;
+    letter-spacing: .3em;
+    font-weight: normal;
+    color: #686868
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+    font-size: 2.65em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2 {
+    font-size: 2.5em;
+    letter-spacing: .2em;
 }
+p {
+    font-size: 1.2em;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.75;
+    color: #8c8c8c;
+}
+
+.page-wrap {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 2em;
+}
+
+
+
+/*-------- BUTTON --------*/
+
+
+.button.fixed {
+    position: fixed;
+}
+
+.button {
+    position: relative;
+    z-index: 150;
+    color: #686868;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    transition: all 0.2s cubic-bezier(.35, 0, .50, 1);
+}
+
+.button a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.button.link_left {
+    top: 1em;
+    left: 0;
+    padding: .5em 0 .5em 2.2em;
+}
+
+.button.link_right {
+    top: 1em;
+    right: 0;
+    padding: .5em 2.2em .5em 0;
+}
+
+.button.link_right:hover {
+    padding: .5em 2.3em .5em 0;
+    color: #ff8717
+}
+
+.button.link_left:hover {
+    padding: .5em 0 .5em 2.3em;
+    color: #ff8717
+}
+
+.button.link_left:before, .button.link_right:before {
+    position: absolute;
+    width: 1em;
+    height: 100%;
+    top: 0;
+    content: ' ';
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.button.link_right:before {
+    right: 1em;
+    background-image: url('./Images/arr-rt.svg');
+}
+
+.button.link_left:before {
+    left: 1em;
+    background-image: url('./Images/arr-lt.svg');
+}
+
+.button.hire {
+    width: 100%;
+    text-align: center;
+    left: 0;
+    bottom: 0;
+    padding: .75em 0;
+    color: #FFF;
+    background: #ff8717;
+    border-radius: 100% 100% 0 0;
+}
+
+/*-------- HERO --------*/
+
+.hero {
+    text-transform: uppercase;
+    position: relative;
+    z-index: 100;
+}
+
+.hero h1 {
+    line-height: 1em;
+    font-size: 2.65em;
+}
+
+.hero span {
+    height: 2px;
+    border-radius: 2px;
+    margin: 1.2em;
+    display: block;
+    background: #ff8717
+}
+
+.hero p {
+    font-size: 1.25em;
+    font-weight: 200;
+    letter-spacing: .4em;
+}
+
+/*-------- SHUTTER --------*/
+
+.shutter {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    padding: .5em;
+}
+
+.shutter>div {
+    position: relative;
+    width: 120%;
+    height: 120%;
+}
+
+.shutter .outer, .shutter .inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+.shutter .outer {
+    animation: spin 20s infinite linear;
+}
+
+.shutter .inner {
+    animation: spin 30s infinite reverse linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*-------- WORK --------*/
+
+.work-content {
+    width:60vw;
+    height:auto;
+    position: absolute;
+    top:90vh;
+    padding:10em;
+    text-align: left;
+}
+
+
+.project-container {
+    display: flex;
+    padding-bottom:20vh;
+}
+
+.project-container > div {
+    width: 50%;
+    height: 60vh;
+    overflow: hidden;
+}
+.project-container .image {
+
+    border-radius:20px
+}
+.project-container img {
+    height: 100%;
+}
+
+.project-container .content {
+    display: flex;
+    flex-direction: column;
+    padding: 4em;
+    align-items: flex-start;
+    justify-content: center;
+}
+.project-container h2 {
+    padding-bottom: 1em;
+}
+
+.project-container p {
+    padding-bottom: 2em;
+}
+.project-container .button {
+    font-size: 1.5em;
+}
+.project-container .button:before {
+    background-size: 60%;
+}
+
+
+.project-container:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+
+
+/*-------- COPYRIGHT --------*/
+
+.copyright {
+    color: #5e5e5e;
+    opacity: .5;
+    position: fixed;
+    z-index: 1;
+    top: 3em;
+    padding-bottom: 1.5em;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: .3em;
+    font-size: .8em;
+    overflow: hidden
+}
+
+.copyright span {
+    display: none
+}
+
+.sub-transition {
+    background: #ededed;
+    position: absolute;
+    right: 0;
+    width: 85vw;
+    height: 100vw;
+    top: 25vh;
+    display: flex;
+    padding: 4em;
+}
+
+
+
+.nav {
+    position: fixed;
+    z-index: 99999;
+    top:2em;
+    right:2em;
+    width:60px;
+    height:60px;
+    border-radius:40px;
+    border:2px solid #e0e0e0;
+    transition: all 0.4s cubic-bezier(0,.1,.15,1) .1s;
+    cursor: pointer;
+    color:#000
+}
+
+.nav:hover {
+    width:500px;
+}
+
+.nav .icon:hover {
+    animation: spin .4s 1 cubic-bezier(0,.1,.15,1);
+}
+
+.nav .icon {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: -2px;
+    top: -2px;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.nav ul {
+    list-style: none;
+    font-size: 1em;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 90%;
+    text-transform: uppercase;
+}
+.nav li {
+    display: block;
+    width: auto;
+}
+.nav a {
+    text-decoration: none;
+    color: #8c8c8c;
+    transition: all 0.2s ease
+}
+
+.nav a:hover {
+    color: #ff8717;
+}
+
+.nav a.active {
+    color: #ff8717;
+    pointer-events: none;
+}
+
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 5em;
+    }
+    /*-------- HERO --------*/
+    .hero h1 {
+        font-size: 7em;
+    }
+    .hero span {
+        margin: 2em;
+    }
+    .hero p {
+        font-size: 3em;
+    }
+    /*-------- BUTTONS --------*/
+    .button {
+        font-size: 2em;
+    }
+    .button.link_left {
+        top: unset;
+        padding: .5em 0 .5em 2.4em;
+    }
+    .button.link_right {
+        top: unset;
+        padding: .5em 2.4em .5em 0;
+    }
+    .button.link_right:hover {
+        padding: .5em 2.6em .5em 0;
+    }
+    .button.link_left:hover {
+        padding: .5em 0 .5em 2.6em;
+    }
+    .button.link_right:before {
+        right: 1em;
+    }
+    .button.link_left:before {
+        left: 1em;
+    }
+    .button.hire {
+        background: transparent;
+        text-align: initial;
+        left: 2em;
+        bottom: 1em;
+        padding: .5em 0;
+        color:#ff8717;
+    }
+    /*-------- SHUTTER --------*/
+    .shutter {
+        padding: 5em
+    }
+    .shutter>div {
+        width: 100%;
+        height: 100%;
+    }
+    .shutter .outer {
+        animation: spin 50s infinite linear;
+    }
+    .shutter .inner {
+        animation: spin 50s infinite reverse linear;
+    }
+    /*-------- COPYRIGHT --------*/
+    .copyright {
+        width: auto;
+        padding-bottom: 2em;
+        right: 6em;
+        font-size: .8em;
+        top: unset;
+        bottom: 3em;
+        opacity: 1;
+    }
+    .copyright span {
+        display: inline
+    }
+}
+
+@media (min-width: 992px) {
+    h1 {
+        font-size: 7em;
+    }
+}
+
+@media (min-width: 1200px) {}
