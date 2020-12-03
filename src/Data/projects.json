@@ -1,0 +1,14 @@
+{
+  "projectData": [
+    {
+      "id": "project-one",
+      "name": "Project 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie."
+    },
+    {
+      "id": "project-two",
+      "name": "Project 2",
+      "description": "Mauris finibus, massa eu tempor volutpat, magna dolor euismod dolor."
+    }
+  ]
+}
