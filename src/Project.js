@@ -2,13 +2,12 @@ import React from "react";
 import { useParams, useHistory } from "react-router-dom";
 
 const Project = ({ data }) => {
-
   const { projectId } = useParams();
-  const project = data.find(p => p.id === String(projectId));
-  
+  const project = data.find((p) => p.id === String(projectId));
+
   let projectData;
-  let history = useHistory()
-  
+  let history = useHistory();
+
   if (project) {
     projectData = (
       <div>
@@ -16,15 +15,17 @@ const Project = ({ data }) => {
         <p>{project.description}</p>
       </div>
     );
-
   } else {
     projectData = <h2> Sorry but this project doesn't exist.</h2>;
   }
 
   return (
     <>
+      <h1>helloooo</h1>
       {projectData}
-      <button type="button" onClick={() => history.goBack()}>goback</button>
+      <button type="button" onClick={() => history.goBack()}>
+        goback
+      </button>
     </>
   );
 };
