@@ -17,8 +17,6 @@ import Projects from "./Projects";
 import "./App.css";
 
 function App() {
-  const location = useLocation();
-
   return (
     <div className="App">
       <Navigation />
@@ -28,7 +26,7 @@ function App() {
       <div className="page-wrap flex_center">
         <AnimatePresence exitBeforeEnter initial={false}>
           <Switch>
-            <Route path="/projects" exact component={Projects} />
+            <Route path="/projects" component={Projects} />
             <Route path="/hire" exact component={Hire} />
             <Route path="/about" exact component={About} />
             <Route key="/" exact path="/" component={Home} />

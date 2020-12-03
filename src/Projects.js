@@ -1,15 +1,9 @@
 import React from "react";
-import {
-  Link,
-  Route,
-  Switch,
-  useRouteMatch,
-  useLocation,
-} from "react-router-dom";
+import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 import Project from "./Project";
 
 const Projects = () => {
-  const location = useLocation();
+  let { url } = useRouteMatch();
 
   const ProjectData = [
     {
@@ -26,7 +20,6 @@ const Projects = () => {
     },
   ];
 
-  const { url } = useRouteMatch();
   const linkList = ProjectData.map((project) => {
     return (
       <li key={project.id}>
@@ -36,13 +29,14 @@ const Projects = () => {
   });
 
   return (
-    <>
-      <ul>{linkList}</ul>
-
-      <Route path="/projects/:projectId">
+    <Switch>
+      <Route exact path={`${url}/:projectId`}>
         <Project data={ProjectData} />
       </Route>
-    </>
+      <Route exact path={url}>
+        <ul>{linkList}</ul>
+      </Route>
+    </Switch>
   );
 };
 
