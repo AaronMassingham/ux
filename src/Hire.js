@@ -1,23 +1,13 @@
 import React from 'react';
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
-const componentVariants = {
+//COMPONENTS
+import AnimatedSpan from './Components/AnimatedSpan';
+
+const componentVariants = { 
   hidden: {
     opacity:0,
-    position: 'absolute',
-  },
-  visible: {
-    opacity: 1,
-  },
-  exit: {
-    opacity:0,
-  }
-}
-
-const componentChildVariants = { 
-  hidden: {
-    opacity:0,
-    y: 1000,
+    y: 500,
   },
   visible: {
     opacity:1,
@@ -28,7 +18,7 @@ const componentChildVariants = {
   },
   exit: {
     opacity:0,
-    y: -1000,
+    y: -500,
     transition: {
       duration:1
     }
@@ -37,17 +27,17 @@ const componentChildVariants = {
 
 export const Hire = () => (
 
-
-    <motion.div
-      variants = {componentVariants}
-      initial = 'hidden'
-      animate = 'visible'
-      exit = 'exit'
-    >
-      <motion.div variants = {componentChildVariants}>
-        Hire me
-      </motion.div> 
-    </motion.div>
+<>
+  <motion.div
+    variants = {componentVariants}
+    initial = 'hidden'
+    animate = 'visible'
+    exit = 'exit'>
+    <h1>Hire me</h1>
+    <AnimatedSpan/>
+  </motion.div> 
+ 
+</>
 
 
 )

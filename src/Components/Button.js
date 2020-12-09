@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 const componentVariants = {
   hidden: {
     opacity:0,
-    
   },
   visible: {
     opacity: 1,
@@ -21,13 +20,13 @@ const componentVariants = {
 export const Button = (props) => (
   <>
     <motion.div 
-        variants = {componentVariants}
-        initial = 'hidden'
-        animate = 'visible'
-        exit = 'exit'
-        className={props.class}
+      variants = {componentVariants}
+      initial = 'hidden'
+      animate = 'visible'
+      exit = 'exit'
+      className={props.class}
     >
-        <NavLink exact activeClassName="active" to={props.linkTo}>{props.btnText}</NavLink>
+      <NavLink exact activeClassName="active" to={props.linkTo}>{props.btnText}</NavLink>
     </motion.div>
 </>
 )
