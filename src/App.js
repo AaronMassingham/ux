@@ -21,15 +21,20 @@ import "./App.css";
 import { projectData } from "./Data/projects.json";
 
 function App() {
+
+let location = useLocation();
+
   return (
+
+    
     <div className="App">
       <Navigation />
       <Copyright />
       <Button class="button hire fixed" linkTo="/hire" btnText="Hire me" />
 
       <div className="page-wrap flex_center">
-        <AnimatePresence exitBeforeEnter initial={false}>
-          <Switch>
+        <AnimatePresence exitBeforeEnter initial={true}>
+          <Switch location={location} key={location.key}>
             <Route exact path="/projects">
               <Projects projectData={projectData} />
             </Route>

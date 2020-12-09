@@ -2,40 +2,37 @@ import React from 'react';
 import { motion } from 'framer-motion'
 
 //COMPONENTS
-import Button from './Components/Button';
+import AnimatedSpan from './Components/AnimatedSpan';
 
-
-const componentVariants = {
+const componentVariants = { 
   hidden: {
     opacity:0,
-    position:'absolute',
+    y: 500,
   },
   visible: {
-    opacity: 1,
+    opacity:1,
+    y: 0,
+    transition: {
+      duration:1
+    }
   },
   exit: {
     opacity:0,
+    y: -500,
+    transition: {
+      duration:1
+    }
   }
 }
-
-
 
 const About = () => (
 
  <>
-  <Button class="button link_left fixed" linkTo="/" btnText="Back" /> 
-
-  <motion.div
-    variants = {componentVariants}
-    initial = 'hidden'
-    animate = 'visible'
-    exit = 'exit'
-  >
+  <motion.div variants = {componentVariants} initial = 'hidden' animate = 'visible' exit = 'exit'>
     <h1>About me</h1>
-</motion.div>
-
+    <AnimatedSpan/>
+  </motion.div>
 </>
-
 
 )
 

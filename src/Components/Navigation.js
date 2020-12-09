@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Navlinks from './Navlinks';
 import Icon from '../Images/nav_icon.svg';
 
-const Nav_ = () => {
+const Navigation = () => {
 
   const [inHover, setHover] = useState(false);
 
@@ -20,5 +20,5 @@ return (
 
   );
 };
-export default Nav_;
+export default Navigation;
 

@@ -1,39 +1,39 @@
 import React from 'react';
 import { motion } from 'framer-motion'
 
-const componentVariants = {
-    hidden: {
-      width:'1%',
-      opacity:0,
-    },
-    visible: {
-      opacity: 1,
-      width:'30%',
-      transition: {
-        delay:2,
-        duration:1
-      }
-    },
-    exit: {
-      opacity:0,
+// COMPONENTS
+import AnimatedSpan from './AnimatedSpan';
+
+const componentVariants = { 
+  hidden: {
+    opacity:0,
+  },
+  visible: {
+    opacity:1,
+    transition: {
+      delay:2,
+      duration: 1.5,
     }
+  },
+  exit: {
+    opacity:0,
   }
+}
 
-export const Hero = () => (
+const Hero = () => (
+  <div className="hero flex_center">
+    <motion.div 
+    variants = {componentVariants}
+    initial = 'hidden'
+    animate = 'visible'
+    exit = 'exit'>
 
-
-
-    <div className="hero flex_center">
         <h1>Chelsea<br/>Handforth</h1>
-        <motion.span
-            variants = {componentVariants}
-            initial = 'hidden'
-            animate = 'visible'
-            exit = 'exit'
-        >
-        </motion.span>
+        <AnimatedSpan/>
         <p>Photography</p>
-    </div>
+
+    </motion.div>
+  </div>
 
 )
 export default Hero;

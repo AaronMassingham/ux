@@ -15,6 +15,10 @@ const componentVariants = {
   },
   exit: {
     opacity:0,
+      transition: {
+      delay:.4,
+      duration:.5
+    }
   }
 }
 
