@@ -10,9 +10,11 @@ const Home = () => (
  <>
   <Button class="button link_right fixed" linkTo="/about" btnText="About" /> 
   <Button class="button link_left fixed" linkTo="/projects" btnText="Work" />  
-
-  <Hero />     
-  <Shutter />      
+  <div className="page-wrap main flex_center">
+    <Hero />     
+    <Shutter />  
+  </div>
+    
 </> 
 
 )

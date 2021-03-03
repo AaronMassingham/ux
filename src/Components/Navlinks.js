@@ -1,28 +1,21 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
+import ToggleSwitch from "./ToggleSwitch";
 
 const componentVariants = {
   hidden: {
-    opacity:0,
+
   },
   visible: {
-    opacity: 1,
-    transition: {
-      delay:.4,
-      duration:.5
-    }
+
   },
   exit: {
-    opacity:0,
-      transition: {
-      delay:.4,
-      duration:.5
-    }
+
   }
 }
 
-const Navlinks = () => (
+const Navlinks = (props) => (
 
     <motion.ul
       variants = {componentVariants}
@@ -37,13 +30,16 @@ const Navlinks = () => (
         <NavLink activeClassName="active" to="/about">About</NavLink>
       </li>
       <li>
-        <NavLink activeClassName="active" to="/projects">Projects</NavLink>
+        <NavLink activeClassName="active" to="/projects">Work</NavLink>
       </li>
       <li>
         <NavLink activeClassName="active" to="/hire">Hire</NavLink>
       </li>
+      <li>
+        <p>dark / light</p>
+       <ToggleSwitch onClick={props.onClick}/>
+      </li>
     </motion.ul>
-
 
 
 )

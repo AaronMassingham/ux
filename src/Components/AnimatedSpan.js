@@ -10,13 +10,16 @@ const componentVariants = {
     width:'30%',
     opacity: 1,
     transition: {
-      delay:2,
-      duration:1
+      delay:1,
+      duration:.75
     }
   },
   exit: {
     width:'1%',
     opacity:0,
+    transition: {
+      duration:.5
+    }
   }
 }
 

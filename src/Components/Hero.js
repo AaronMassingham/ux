@@ -11,7 +11,7 @@ const componentVariants = {
   visible: {
     opacity:1,
     transition: {
-      delay:2,
+      delay:1,
       duration: 1.5,
     }
   },
@@ -21,8 +21,9 @@ const componentVariants = {
 }
 
 const Hero = () => (
-  <div className="hero flex_center">
+
     <motion.div 
+    className="hero"
     variants = {componentVariants}
     initial = 'hidden'
     animate = 'visible'
@@ -33,7 +34,7 @@ const Hero = () => (
         <p>Photography</p>
 
     </motion.div>
-  </div>
+
 
 )
 export default Hero;

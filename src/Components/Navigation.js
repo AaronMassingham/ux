@@ -1,24 +1,50 @@
-import React, { useState } from "react";
+import React from "react";
 
 //COMPONENTS
 import Navlinks from './Navlinks';
-import Icon from '../Images/nav_icon.svg';
 
-const Navigation = () => {
 
-  const [inHover, setHover] = useState(false);
+class Navigation extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {addClass: false}
+    this.state = { matches: window.matchMedia("(min-width: 1200px)").matches };
+  }
 
-return (
+  toggle() {
+    setTimeout(() => {
+      this.setState({addClass: !this.state.addClass});
+    }, 200);
+  }
 
-    <div className="nav"
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
-      <div className="icon" style={{backgroundImage: `url(${Icon})`}}></div>
-      {inHover && <Navlinks />}
-    </div>
+  componentDidMount() {
+    const handler = e => this.setState({matches: e.matches});
+    window.matchMedia("(min-width: 1200px)").addListener(handler);
+  }
 
-  );
-};
+  render() {
+    let navClass = ["nav"];
+    if(this.state.addClass) {
+      navClass.push('open');
+    }
+    return(
+<>
+
+      {this.state.matches && (
+        <div className="nav">
+          <Navlinks/>
+        </div>
+      )}
+
+      {!this.state.matches && (
+        <div className={navClass.join(' ')} onClick={this.toggle.bind(this)}>
+          <div className="icon"></div>
+          <Navlinks onClick={this.props.onClick}/>
+        </div>    
+      )}
+        
+       </>    
+    );
+  }
+}
 export default Navigation;
-
