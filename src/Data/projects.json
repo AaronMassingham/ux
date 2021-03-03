@@ -3,12 +3,38 @@
     {
       "id": "project-one",
       "name": "Project 1",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie."
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed venenatis tellus. Cras at efficitur mauris, eu blandit quam.",
+      "mainImage": "/veggies.jpg",
+      "gallery": [
+        "/01.jpg",
+        "/02.jpg",
+        "/03.jpg"
+      ]
     },
     {
       "id": "project-two",
       "name": "Project 2",
-      "description": "Mauris finibus, massa eu tempor volutpat, magna dolor euismod dolor."
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed venenatis tellus. Cras at efficitur mauris, eu blandit quam. Nam sollicitudin nisl ullamcorper, tincidunt libero ac, commodo felis. Mauris eget orci tincidunt.",
+      "mainImage": "/veggies.jpg"
+      
+    },
+    {
+      "id": "project-three",
+      "name": "Project 3",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed venenatis tellus. Cras at efficitur mauris, eu blandit quam. Nam sollicitudin nisl ullamcorper, tincidunt libero ac, commodo felis. Mauris eget orci tincidunt, faucibus turpis id, venenatis magna. Donec ut felis non metus imperdiet fringilla.",
+      "mainImage": "/veggies.jpg"
+    },
+    {
+      "id": "project-four",
+      "name": "Project 4",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed venenatis tellus.",
+      "mainImage": "/veggies.jpg"
+    },
+    {
+      "id": "project-five",
+      "name": "Project 5",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed venenatis tellus. Cras at efficitur mauris, eu blandit quam. Nam sollicitudin nisl ullamcorper, tincidunt libero ac, commodo felis. Mauris eget orci tincidunt, faucibus turpis id, venenatis magna.",
+      "mainImage": "/veggies.jpg"
     }
   ]
 }

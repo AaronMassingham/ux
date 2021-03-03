@@ -29,15 +29,16 @@ const componentVariants = {
 const Shutter = () => (
 
     <motion.div 
-    className="shutter flex_center" 
-    variants = {componentVariants}
-    initial = 'hidden'
-    animate = 'visible'
-    exit = 'exit'>
-        <div>
-            <div className="outer" style={{backgroundImage: `url(${Outer})`}}></div>
-            <div className="inner" style={{backgroundImage: `url(${Inner})`}}></div>
-        </div>
+      className="shutter flex_center" 
+      variants = {componentVariants}
+      initial = 'hidden'
+      animate = 'visible'
+      exit = 'exit'
+    >
+      <div>
+          <div className="outer" style={{backgroundImage: `url(${Outer})`}}></div>
+          <div className="inner" style={{backgroundImage: `url(${Inner})`}}></div>
+      </div>
     </motion.div> 
 
 )

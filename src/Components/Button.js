@@ -17,7 +17,7 @@ const componentVariants = {
   }
 }
 
-export const Button = (props) => (
+const Button = (props) => (
   <>
     <motion.div 
       variants = {componentVariants}
